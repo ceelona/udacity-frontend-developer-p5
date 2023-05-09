@@ -3,7 +3,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const axios = require('axios');
-const { render } = require('node-sass');
 
 /*
  * SETUP

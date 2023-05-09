@@ -7,8 +7,6 @@ const handleSubmit = async(event) => {
     const start = document.getElementById('start').value;
     const end = document.getElementById('end').value;
 
-    console.log({location, start, end})
-
     if(!(location && start && end)){
         alert('Location and date range required.')
         return
@@ -28,7 +26,6 @@ const handleSubmit = async(event) => {
             body: JSON.stringify({location, start, end})
         })
         const data = await res.json()
-        console.log(data)
         await uiControl.updateUi()
 
     } catch (err) {

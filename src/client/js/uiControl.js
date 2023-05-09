@@ -32,14 +32,15 @@ const getCardDiv = (trip) => {
     if(trip.weather){
         const weather = document.createElement('p')
         weather.innerHTML = `${trip.weather.min_temp}°C - ${trip.weather.max_temp}°C`
+        cardText.appendChild(weather)
 
         // Incorporate icons into forecast.
-        const icon = document.createElement('img')
-        icon.classList.add('icon');
-        icon.setAttribute('src', `https://cdn.weatherbit.io/static/img/icons/${trip.weather.weather.icon}.png`)
-
-        cardText.appendChild(weather)
-        cardText.appendChild(icon)
+        if(trip.weather.weather.icon){
+            const icon = document.createElement('img')
+            icon.classList.add('icon');
+            icon.setAttribute('src', `https://cdn.weatherbit.io/static/img/icons/${trip.weather.weather.icon}.png`)
+            cardText.appendChild(icon)
+        }
     }
 
     if(trip.pictures && trip.pictures.hits.length>0){
@@ -72,4 +73,4 @@ const updateUi = async() => {
     }
 }
 
-export { updateUi }
+export { updateUi, getCardDiv }
