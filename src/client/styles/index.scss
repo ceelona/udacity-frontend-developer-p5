@@ -1,0 +1,71 @@
+
+
+@import "foundation.scss";
+@import "typography.scss";
+@import "home.scss";
+
+article {
+    margin: 0 auto;
+    max-width: 1140px;
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows:  auto 1fr auto;
+    grid-template-areas: "hd" "main" "ft";
+    justify-content: center;
+}
+
+header {
+    grid-area: hd;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    background-color: #536878;
+    color: #fff;
+    padding: 12px 36px;
+}
+
+main {
+    padding: 2rem 1rem;
+    grid-area: main;
+    background-color:#DDE1E4;
+}
+
+footer {
+    grid-area: ft;
+    text-align: center;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart {
+    margin: 0 0.5rem;
+}
+
+button {
+    display:inline-block;
+    padding:0.36em 0.8em;
+    border:0.1em solid #536878;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    color:#536878;
+    text-align:center;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    button {
+        width: 100%;
+        padding: 0.75rem;
+        margin: 0.5rem auto;
+    }
+}
+
+button:hover {
+    opacity: 80%;
+}

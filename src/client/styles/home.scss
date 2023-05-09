@@ -1,0 +1,50 @@
+.trip-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.form-container {
+    margin: 1rem;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    border: 0.1em solid #536878;
+}
+
+.card {
+    padding: 1rem;
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    box-shadow: 2px 2px 6px #808080;
+    background: #fff;
+    height: 30rem;
+}
+
+.card {
+    .card-text {
+        margin: 1rem 0.5rem;
+        overflow: auto;
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 15rem;
+        object-fit: cover;
+
+        &.icon {
+            height: 50px;
+            aspect-ratio: auto 50 / 50;
+            width: 50px;
+        }
+    }
+}
+
+input {
+    display: block;
+    margin: 1rem 0;
+}
+
