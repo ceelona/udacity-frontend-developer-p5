@@ -72,7 +72,7 @@ app.post('/api/trip', async(req, res) => {
     const {start, end, location} = req.body
     try {
         const geo = await getGeoInfo(location)
-        const days = Math.ceil((new Date(start)-new Date()) / (1000 * 60 * 60 * 24))
+        const days = Math.ceil((new Date(start)-new Date()) / (1000 * 60 * 60 * 24))-1
         const weather = days>=0 && geo ? await getWeatherInfo({lat: geo.lat, lng: geo.lng, days }) : undefined
         const pictures = await getPictures(location)
         const trip = {geo, weather, pictures, start, end, location, days}
